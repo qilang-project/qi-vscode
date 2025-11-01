@@ -1,0 +1,298 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Qi",
+  "scopeName": "source.qi",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.qi",
+          "begin": "//",
+          "end": "$",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.qi"
+            }
+          }
+        },
+        {
+          "name": "comment.block.qi",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.comment.qi"
+            }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.qi",
+          "begin": "\"",
+          "end": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.qi"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.qi"
+            }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.qi",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.qi",
+          "begin": "'",
+          "end": "'",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.qi"
+            }
+          },
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.qi"
+            }
+          },
+          "patterns": [
+            {
+              "name": "constant.character.escape.qi",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.qi",
+          "match": "\\b(如果|否则|当|对于|循环|匹配|跳出|继续|返回|等待)\\b"
+        },
+        {
+          "name": "keyword.declaration.qi",
+          "match": "\\b(包|导入|公开|私有|可变|不可变)\\b"
+        },
+        {
+          "name": "keyword.other.qi",
+          "match": "\\b(打印|真|假|空)\\b"
+        },
+        {
+          "name": "storage.type.qi",
+          "match": "\\b(函数|异步函数|变量|结构体|枚举|方法|接口)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.primitive.qi",
+          "match": "\\b(整数|长整数|短整数|字节|浮点数|布尔|字符|字符串)\\b"
+        },
+        {
+          "name": "storage.type.collection.qi",
+          "match": "\\b(数组|字典|列表|集合|指针|引用|可变引用)\\b"
+        },
+        {
+          "name": "support.type.qi",
+          "match": "\\b[\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.qi",
+          "match": "\\b([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\s*(?=\\()"
+        },
+        {
+          "name": "entity.name.function.async.qi",
+          "match": "\\b异步函数\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.qi"
+            }
+          }
+        },
+        {
+          "name": "entity.name.function.declaration.qi",
+          "match": "\\b函数\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.qi"
+            }
+          }
+        },
+        {
+          "name": "meta.function-call.qi",
+          "match": "([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\s*(\\()",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.qi"
+            },
+            "2": {
+              "name": "punctuation.definition.parameters.begin.qi"
+            }
+          }
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.qi",
+          "match": "\\b([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\b"
+        },
+        {
+          "name": "variable.declaration.qi",
+          "match": "\\b变量\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
+          "captures": {
+            "1": {
+              "name": "variable.other.qi"
+            }
+          }
+        },
+        {
+          "name": "variable.parameter.qi",
+          "match": "\\b([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\s*(?=:)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.qi"
+            }
+          }
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.qi",
+          "match": "(\\+|\\-|\\*|\\/|%)"
+        },
+        {
+          "name": "keyword.operator.comparison.qi",
+          "match": "(==|!=|<|<=|>|>=)"
+        },
+        {
+          "name": "keyword.operator.logical.qi",
+          "match": "(&&|\\|\\||!)"
+        },
+        {
+          "name": "keyword.operator.assignment.qi",
+          "match": "(=|\\+=|\\-=|\\*=|/=|%=)"
+        },
+        {
+          "name": "keyword.operator.other.qi",
+          "match": "(\\.|\\->|::)"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.qi",
+          "match": "\\b\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.float.qi",
+          "match": "\\b\\d+\\.\\d+([eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.numeric.hex.qi",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        },
+        {
+          "name": "constant.numeric.binary.qi",
+          "match": "\\b0[bB][01]+\\b"
+        },
+        {
+          "name": "constant.numeric.octal.qi",
+          "match": "\\b0[oO][0-7]+\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.qi",
+          "match": "[,，]"
+        },
+        {
+          "name": "punctuation.terminator.chinese.qi",
+          "match": "；"
+        },
+        {
+          "name": "punctuation.terminator.english.qi",
+          "match": ";"
+        },
+        {
+          "name": "punctuation.accessor.qi",
+          "match": "[\\.。]"
+        },
+        {
+          "name": "punctuation.bracket.curly.chinese.qi",
+          "match": "【】"
+        },
+        {
+          "name": "punctuation.bracket.curly.english.qi",
+          "match": "[{}]"
+        },
+        {
+          "name": "punctuation.bracket.square.chinese.qi",
+          "match": "［］"
+        },
+        {
+          "name": "punctuation.bracket.square.english.qi",
+          "match": "[\\[\\]]"
+        },
+        {
+          "name": "punctuation.bracket.round.chinese.qi",
+          "match": "（）"
+        },
+        {
+          "name": "punctuation.bracket.round.english.qi",
+          "match": "[()]"
+        }
+      ]
+    }
+  }
+}

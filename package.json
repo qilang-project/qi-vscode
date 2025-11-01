@@ -1,0 +1,300 @@
+{
+  "name": "qi-language",
+  "displayName": "Qi Language",
+  "description": "Qi 编程语言支持 - 语法高亮、代码片段和语言服务器集成",
+  "version": "0.1.0",
+  "publisher": "qi-language",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters"
+  ],
+  "keywords": [
+    "qi",
+    "chinese",
+    "programming language",
+    "语法高亮",
+    "中文编程"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qi-lang/qi-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/qi-lang/qi-vscode/issues"
+  },
+  "homepage": "https://qi-lang.org",
+  "icon": "extension/icon.png",
+  "activationEvents": [
+    "onLanguage:qi"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "qi",
+        "aliases": [
+          "Qi",
+          "qi"
+        ],
+        "extensions": [
+          ".qi"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "qi",
+        "scopeName": "source.qi",
+        "path": "./syntaxes/qi.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.qi": "qi"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "qi",
+        "path": "./snippets/qi.code-snippets"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Qi Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/qi-dark.json"
+      },
+      {
+        "label": "Qi Light",
+        "uiTheme": "vs-light",
+        "path": "./themes/qi-light.json"
+      }
+    ],
+    "configuration": [
+      {
+        "title": "Qi Language",
+        "properties": {
+          "qi.languageServer.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用 Qi 语言服务器"
+          },
+          "qi.languageServer.path": {
+            "type": "string",
+            "default": "",
+            "description": "Qi 语言服务器可执行文件路径（留空使用自动查找）"
+          },
+          "qi.languageServer.debug": {
+            "type": "boolean",
+            "default": false,
+            "description": "启用语言服务器调试模式"
+          },
+          "qi.formatting.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用代码格式化"
+          },
+          "qi.formatting.indentSize": {
+            "type": "number",
+            "default": 4,
+            "minimum": 1,
+            "maximum": 16,
+            "description": "格式化缩进大小"
+          },
+          "qi.completion.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用代码补全"
+          },
+          "qi.diagnostics.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用语义诊断"
+          },
+          "qi.hover.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用悬停提示"
+          },
+          "qi.definition.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用跳转到定义"
+          },
+          "qi.references.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用查找所有引用"
+          },
+          "qi.documentSymbols.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用文档符号"
+          },
+          "qi.documentHighlights.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用文档高亮"
+          },
+          "qi.workspaceSymbols.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用工作区符号"
+          },
+          "qi.codeActions.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用代码操作"
+          },
+          "qi.codeLenses.enabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "启用代码透镜"
+          },
+          "qi.signatureHelp.enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "启用签名帮助"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "qi.restartLanguageServer",
+        "title": "重启 Qi 语言服务器",
+        "category": "Qi"
+      },
+      {
+        "command": "qi.showLanguageServerOutput",
+        "title": "显示语言服务器输出",
+        "category": "Qi"
+      },
+      {
+        "command": "qi.showWorkspaceSymbols",
+        "title": "显示工作区符号",
+        "category": "Qi"
+      },
+      {
+        "command": "qi.renameSymbol",
+        "title": "重命名符号",
+        "category": "Qi"
+      },
+      {
+        "command": "qi.findReferences",
+        "title": "查找所有引用",
+        "category": "Qi"
+      },
+      {
+        "command": "qi.goToDefinition",
+        "title": "转到定义",
+        "category": "Qi"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "qi.restartLanguageServer",
+          "when": "editorLangId == qi"
+        },
+        {
+          "command": "qi.showLanguageServerOutput",
+          "when": "editorLangId == qi"
+        },
+        {
+          "command": "qi.showWorkspaceSymbols",
+          "when": "editorLangId == qi"
+        },
+        {
+          "command": "qi.renameSymbol",
+          "when": "editorLangId == qi && editorTextFocus"
+        },
+        {
+          "command": "qi.findReferences",
+          "when": "editorLangId == qi && editorTextFocus"
+        },
+        {
+          "command": "qi.goToDefinition",
+          "when": "editorLangId == qi && editorTextFocus"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "qi.renameSymbol",
+          "when": "editorLangId == qi && editorTextFocus",
+          "group": "1_modification"
+        },
+        {
+          "command": "qi.findReferences",
+          "when": "editorLangId == qi && editorTextFocus",
+          "group": "navigation"
+        },
+        {
+          "command": "qi.goToDefinition",
+          "when": "editorLangId == qi && editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "qi.renameSymbol",
+        "key": "F2",
+        "when": "editorTextFocus && editorLangId == qi",
+        "mac": "F2"
+      },
+      {
+        "command": "qi.findReferences",
+        "key": "shift+F12",
+        "when": "editorTextFocus && editorLangId == qi",
+        "mac": "cmd+shift+F12"
+      },
+      {
+        "command": "qi.goToDefinition",
+        "key": "F12",
+        "when": "editorTextFocus && editorLangId == qi",
+        "mac": "F12"
+      },
+      {
+        "command": "qi.showWorkspaceSymbols",
+        "key": "ctrl+t",
+        "when": "editorTextFocus && editorLangId == qi",
+        "mac": "cmd+t"
+      },
+      {
+        "command": "qi.restartLanguageServer",
+        "key": "ctrl+shift+r",
+        "when": "editorLangId == qi",
+        "mac": "cmd+shift+r"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint src --ext ts --fix",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "vscode:install": "code --install-extension ."
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.0",
+    "@vscode/test-electron": "^2.3.9"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

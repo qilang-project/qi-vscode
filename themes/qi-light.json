@@ -1,0 +1,245 @@
+{
+  "name": "Qi Light",
+  "type": "vs-light",
+  "colors": {
+    "editor.background": "#ffffff",
+    "editor.foreground": "#000000",
+    "activityBarBadge.background": "#007acc",
+    "sideBarTitle.foreground": "#333333"
+  },
+  "tokenColors": [
+    {
+      "name": "Qi Comments",
+      "scope": [
+        "comment.line.double-slash.qi",
+        "comment.block.qi"
+      ],
+      "settings": {
+        "foreground": "#008000",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Qi Keywords - Control Flow",
+      "scope": [
+        "keyword.control.qi"
+      ],
+      "settings": {
+        "foreground": "#AF00DB",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Qi Keywords - Declaration",
+      "scope": [
+        "keyword.declaration.qi"
+      ],
+      "settings": {
+        "foreground": "#0000FF",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Qi Keywords - Other",
+      "scope": [
+        "keyword.other.qi"
+      ],
+      "settings": {
+        "foreground": "#0000FF"
+      }
+    },
+    {
+      "name": "Qi Storage Types - Primitive",
+      "scope": [
+        "storage.type.primitive.qi"
+      ],
+      "settings": {
+        "foreground": "#267F99",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Qi Storage Types - Collection",
+      "scope": [
+        "storage.type.collection.qi"
+      ],
+      "settings": {
+        "foreground": "#267F99"
+      }
+    },
+    {
+      "name": "Qi Storage Types - Function/Method",
+      "scope": [
+        "storage.type.qi",
+        "entity.name.function.declaration.qi",
+        "entity.name.function.async.qi"
+      ],
+      "settings": {
+        "foreground": "#795E26",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "Qi Functions",
+      "scope": [
+        "entity.name.function.qi",
+        "meta.function-call.qi"
+      ],
+      "settings": {
+        "foreground": "#795E26"
+      }
+    },
+    {
+      "name": "Qi Variables",
+      "scope": [
+        "variable.other.qi",
+        "variable.declaration.qi"
+      ],
+      "settings": {
+        "foreground": "#001080"
+      }
+    },
+    {
+      "name": "Qi Parameters",
+      "scope": [
+        "variable.parameter.qi"
+      ],
+      "settings": {
+        "foreground": "#001080",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Qi Support Types",
+      "scope": [
+        "support.type.qi"
+      ],
+      "settings": {
+        "foreground": "#267F99"
+      }
+    },
+    {
+      "name": "Qi Strings",
+      "scope": [
+        "string.quoted.double.qi",
+        "string.quoted.single.qi"
+      ],
+      "settings": {
+        "foreground": "#A31515"
+      }
+    },
+    {
+      "name": "Qi String Escape",
+      "scope": [
+        "constant.character.escape.qi"
+      ],
+      "settings": {
+        "foreground": "#EE0000"
+      }
+    },
+    {
+      "name": "Qi Numbers - Integer",
+      "scope": [
+        "constant.numeric.integer.qi",
+        "constant.numeric.hex.qi",
+        "constant.numeric.binary.qi",
+        "constant.numeric.octal.qi"
+      ],
+      "settings": {
+        "foreground": "#098658"
+      }
+    },
+    {
+      "name": "Qi Numbers - Float",
+      "scope": [
+        "constant.numeric.float.qi"
+      ],
+      "settings": {
+        "foreground": "#098658"
+      }
+    },
+    {
+      "name": "Qi Operators - Arithmetic",
+      "scope": [
+        "keyword.operator.arithmetic.qi"
+      ],
+      "settings": {
+        "foreground": "#000000"
+      }
+    },
+    {
+      "name": "Qi Operators - Comparison",
+      "scope": [
+        "keyword.operator.comparison.qi"
+      ],
+      "settings": {
+        "foreground": "#0000FF"
+      }
+    },
+    {
+      "name": "Qi Operators - Logical",
+      "scope": [
+        "keyword.operator.logical.qi"
+      ],
+      "settings": {
+        "foreground": "#0000FF"
+      }
+    },
+    {
+      "name": "Qi Operators - Assignment",
+      "scope": [
+        "keyword.operator.assignment.qi"
+      ],
+      "settings": {
+        "foreground": "#000000"
+      }
+    },
+    {
+      "name": "Qi Operators - Other",
+      "scope": [
+        "keyword.operator.other.qi"
+      ],
+      "settings": {
+        "foreground": "#000000"
+      }
+    },
+    {
+      "name": "Qi Punctuation - Separators",
+      "scope": [
+        "punctuation.separator.qi"
+      ],
+      "settings": {
+        "foreground": "#000000"
+      }
+    },
+    {
+      "name": "Qi Punctuation - Terminators",
+      "scope": [
+        "punctuation.terminator.qi"
+      ],
+      "settings": {
+        "foreground": "#000000"
+      }
+    },
+    {
+      "name": "Qi Punctuation - Brackets",
+      "scope": [
+        "punctuation.bracket.curly.qi",
+        "punctuation.bracket.square.qi",
+        "punctuation.bracket.round.qi"
+      ],
+      "settings": {
+        "foreground": "#000000"
+      }
+    },
+    {
+      "name": "Qi Punctuation - Accessors",
+      "scope": [
+        "punctuation.accessor.qi"
+      ],
+      "settings": {
+        "foreground": "#000000"
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "comments": {
+    "lineComment": "//",
+    "blockComment": ["/*", "*/"]
+  },
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["【", "】"],
+    ["（", "）"]
+  ],
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "【", "close": "】" },
+    { "open": "（", "close": "）" },
+    { "open": "（", "close": "}" },
+    { "open": "【", "close": "}" },
+    { "open": "(", "close": "】" },
+    { "open": "【", "close": ")" },
+    { "open": "\"", "close": "\"", "notIn": ["string"] },
+    { "open": "'", "close": "'", "notIn": ["string", "comment"] },
+    { "open": "/*", "close": "*/", "notIn": ["string"] }
+  ],
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["【", "】"],
+    ["（", "）"],
+    ["（", "}"],
+    ["【", "}"],
+    ["(", "】"],
+    ["【", ")"],
+    ["\"", "\""],
+    ["'", "'"],
+    ["/*", "*/"]
+  ],
+  "folding": {
+    "markers": {
+      "start": "^\\s*#\\s*region\\b",
+      "end": "^\\s*#\\s*endregion\\b"
+    }
+  },
+  "wordPattern": "([\\w\\u4e00-\\u9fff]+)",
+  "indentationRules": {
+    "increaseIndentPattern": "^\\s*((函数|异步函数|如果|当|对于|循环|结构体|枚举|否则|匹配)\\b.*|[\\{【（][^\\}\\】）]*|[\\{【（][^\\}\\】）]*)",
+    "decreaseIndentPattern": "^\\s*((}|\\)|\\]|\\】|）)|^\\s*(否则|跳出|继续)\\b",
+    "indentNextLinePattern": "^\\s*((函数|异步函数|如果|当|对于|循环|结构体|枚举|否则|匹配)\\b.*\\s*[\\{【（]?\\s*$",
+    "unIndentedLinePattern": "^\\s*(}|\\)|\\]|\\】|）)"
+  }
+}

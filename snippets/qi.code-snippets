@@ -1,0 +1,390 @@
+{
+  "Qi Package Declaration": {
+    "prefix": "包",
+    "body": [
+      "包 ${1:主程序};"
+    ],
+    "description": "包声明"
+  },
+  "Qi Package Declaration (Chinese Semicolon)": {
+    "prefix": "包中文",
+    "body": [
+      "包 ${1:主程序}；"
+    ],
+    "description": "包声明（中文分号）"
+  },
+  "Qi Function Declaration": {
+    "prefix": "函数",
+    "body": [
+      "函数 ${1:name}(${2:param}: ${3:类型})${4:: ${5:返回类型}} {",
+      "    ${6:// 函数体}",
+      "    ${7:返回 ${8:result};}",
+      "}"
+    ],
+    "description": "函数声明"
+  },
+  "Qi Async Function Declaration": {
+    "prefix": "异步函数",
+    "body": [
+      "异步函数 ${1:name}(${2:param}: ${3:类型})${4:: ${5:返回类型}} {",
+      "    ${6:// 异步函数体}",
+      "    ${7:等待 ${8:async_call};}",
+      "    ${9:返回 ${10:result};}",
+      "}"
+    ],
+    "description": "异步函数声明"
+  },
+  "Qi Variable Declaration": {
+    "prefix": "变量",
+    "body": [
+      "变量 ${1:name}: ${2:类型} = ${3:value};"
+    ],
+    "description": "变量声明"
+  },
+  "Qi Mutable Variable Declaration": {
+    "prefix": "可变变量",
+    "body": [
+      "可变 ${1:name}: ${2:类型} = ${3:value};"
+    ],
+    "description": "可变变量声明"
+  },
+  "Qi If Statement": {
+    "prefix": "如果",
+    "body": [
+      "如果 ${1:condition} {",
+      "    ${2:// 条件为真时执行}",
+      "} 否则 {",
+      "    ${3:// 条件为假时执行}",
+      "}"
+    ],
+    "description": "如果语句"
+  },
+  "Qi While Loop": {
+    "prefix": "当",
+    "body": [
+      "当 ${1:condition} {",
+      "    ${2:// 循环体内容}",
+      "}"
+    ],
+    "description": "当循环"
+  },
+  "Qi For Loop": {
+    "prefix": "对于",
+    "body": [
+      "对于 ${1:item} 在 ${2:collection} {",
+      "    ${3:// 处理每个元素}",
+      "}"
+    ],
+    "description": "对于循环"
+  },
+  "Qi Infinite Loop": {
+    "prefix": "循环",
+    "body": [
+      "循环 {",
+      "    ${1:// 循环体}",
+      "    ${2:如果 ${3:break_condition} {",
+      "        跳出循环;",
+      "    }",
+      "}"
+    ],
+    "description": "无限循环"
+  },
+  "Qi Return Statement": {
+    "prefix": "返回",
+    "body": [
+      "返回 ${1:value};"
+    ],
+    "description": "返回语句"
+  },
+  "Qi Struct Declaration": {
+    "prefix": "结构体",
+    "body": [
+      "结构体 ${1:Name} {",
+      "    ${2:field}: ${3:Type},",
+      "}"
+    ],
+    "description": "结构体声明"
+  },
+  "Qi Enum Declaration": {
+    "prefix": "枚举",
+    "body": [
+      "枚举 ${1:Name} {",
+      "    ${2:Variant1},",
+      "    ${3:Variant2},",
+      "}"
+    ],
+    "description": "枚举声明"
+  },
+  "Qi Import Statement": {
+    "prefix": "导入",
+    "body": [
+      "导入 ${1:模块};"
+    ],
+    "description": "导入语句"
+  },
+  "Qi Import Specific Items": {
+    "prefix": "导入特定",
+    "body": [
+      "导入 ${1:模块} { ${2:item1}, ${3:item2} };"
+    ],
+    "description": "导入特定项目"
+  },
+  "Qi Import with Alias": {
+    "prefix": "导入别名",
+    "body": [
+      "导入 ${1:模块} as ${2:别名};"
+    ],
+    "description": "导入并重命名"
+  },
+  "Qi Print Statement": {
+    "prefix": "打印",
+    "body": [
+      "打印(\"${1:message}\");"
+    ],
+    "description": "打印语句"
+  },
+  "Qi Await Expression": {
+    "prefix": "等待",
+    "body": [
+      "等待 ${1:async_call};"
+    ],
+    "description": "等待表达式"
+  },
+  "Qi Boolean True": {
+    "prefix": "真",
+    "body": [
+      "真"
+    ],
+    "description": "布尔真值"
+  },
+  "Qi Boolean False": {
+    "prefix": "假",
+    "body": [
+      "假"
+    ],
+    "description": "布尔假值"
+  },
+  "Qi Null/Empty": {
+    "prefix": "空",
+    "body": [
+      "空"
+    ],
+    "description": "空值"
+  },
+  "Qi Break Statement": {
+    "prefix": "跳出",
+    "body": [
+      "跳出;"
+    ],
+    "description": "跳出循环"
+  },
+  "Qi Continue Statement": {
+    "prefix": "继续",
+    "body": [
+      "继续;"
+    ],
+    "description": "继续循环"
+  },
+  "Qi Match Statement": {
+    "prefix": "匹配",
+    "body": [
+      "匹配 ${1:value} {",
+      "    ${2:pattern} => ${3:result},",
+      "}"
+    ],
+    "description": "匹配语句"
+  },
+  "Qi Array Literal": {
+    "prefix": "数组",
+    "body": [
+      "[${1:item1}, ${2:item2}]"
+    ],
+    "description": "数组字面量"
+  },
+  "Qi Public Declaration": {
+    "prefix": "公开",
+    "body": [
+      "公开"
+    ],
+    "description": "公开访问修饰符"
+  },
+  "Qi Private Declaration": {
+    "prefix": "私有",
+    "body": [
+      "私有"
+    ],
+    "description": "私有访问修饰符"
+  },
+  "Qi Method Declaration": {
+    "prefix": "方法",
+    "body": [
+      "方法 ${1:name}(${2:param}: ${3:类型})${4:: ${5:返回类型}} {",
+      "    ${6:// 方法体}",
+      "}"
+    ],
+    "description": "方法声明"
+  },
+  "Qi Type Annotation": {
+    "prefix": "类型",
+    "body": [
+      ": ${1:类型}"
+    ],
+    "description": "类型注解"
+  },
+  "Qi Integer Type": {
+    "prefix": "整数",
+    "body": [
+      "整数"
+    ],
+    "description": "整数类型"
+  },
+  "Qi Float Type": {
+    "prefix": "浮点数",
+    "body": [
+      "浮点数"
+    ],
+    "description": "浮点数类型"
+  },
+  "Qi String Type": {
+    "prefix": "字符串",
+    "body": [
+      "字符串"
+    ],
+    "description": "字符串类型"
+  },
+  "Qi Boolean Type": {
+    "prefix": "布尔",
+    "body": [
+      "布尔"
+    ],
+    "description": "布尔类型"
+  },
+  "Qi Character Type": {
+    "prefix": "字符",
+    "body": [
+      "字符"
+    ],
+    "description": "字符类型"
+  },
+  "Qi Standard Library Import": {
+    "prefix": "标准库",
+    "body": [
+      "导入 标准库;"
+    ],
+    "description": "导入标准库"
+  },
+  "Qi Standard Library IO": {
+    "prefix": "输入输出",
+    "body": [
+      "导入 标准库.输入输出;"
+    ],
+    "description": "导入标准库输入输出模块"
+  },
+  "Qi Standard Library Collections": {
+    "prefix": "集合库",
+    "body": [
+      "导入 标准库.集合;"
+    ],
+    "description": "导入标准库集合模块"
+  },
+  "Qi Hello World": {
+    "prefix": "你好世界",
+    "body": [
+      "包 主程序;",
+      "",
+      "函数 入口() {",
+      "    打印(\"你好，世界！\");",
+      "}"
+    ],
+    "description": "你好世界程序"
+  },
+  "Qi Hello World (Chinese Punctuation)": {
+    "prefix": "你好世界中文",
+    "body": [
+      "包 主程序；",
+      "",
+      "函数 入口（）【",
+      "    打印(\"你好，世界！\")；",
+      "】"
+    ],
+    "description": "你好世界程序（中文标点）"
+  },
+  "Qi Function (Chinese Brackets)": {
+    "prefix": "函数中文",
+    "body": [
+      "函数 ${1:name}（${2:param}: ${3:类型}）${4:: ${5:返回类型}} 【",
+      "    ${6:// 函数体}",
+      "    ${7:返回 ${8:result}；",
+      "】"
+    ],
+    "description": "函数声明（中文标点）"
+  },
+  "Qi Function (Mixed Punctuation)": {
+    "prefix": "函数混合",
+    "body": [
+      "函数 ${1:name}(${2:param}: ${3:类型})${4:: ${5:返回类型}} 【",
+      "    ${6:// 函数体}",
+      "    ${7:返回 ${8:result};",
+      "】"
+    ],
+    "description": "函数声明（混合标点）"
+  },
+  "Qi If Statement (Chinese Brackets)": {
+    "prefix": "如果中文",
+    "body": [
+      "如果 ${1:condition} 【",
+      "    ${2:// 条件为真时执行}",
+      "】 否则 【",
+      "    ${3:// 条件为假时执行}",
+      "】"
+    ],
+    "description": "如果语句（中文标点）"
+  },
+  "Qi While Loop (Chinese Brackets)": {
+    "prefix": "当中文",
+    "body": [
+      "当 ${1:condition} 【",
+      "    ${2:// 循环体内容}",
+      "】"
+    ],
+    "description": "当循环（中文标点）"
+  },
+  "Qi Struct (Chinese Brackets)": {
+    "prefix": "结构体中文",
+    "body": [
+      "结构体 ${1:Name} 【",
+      "    ${2:field}: ${3:Type},",
+      "】"
+    ],
+    "description": "结构体声明（中文标点）"
+  },
+  "Qi Variable Declaration (Chinese)": {
+    "prefix": "变量中文",
+    "body": [
+      "变量 ${1:name}: ${2:type} = ${3:value};"
+    ],
+    "description": "变量声明（中文分号）"
+  },
+  "Qi Program Template": {
+    "prefix": "程序",
+    "body": [
+      "包 主程序；",
+      "",
+      "函数 入口()【",
+      "    ${1:打印(\"你好，世界！\")；}",
+      "】"
+    ],
+    "description": "程序模板（包声明和入口函数）"
+  },
+  "Qi Program Template (English Punctuation)": {
+    "prefix": "program",
+    "body": [
+      "包 主程序;",
+      "",
+      "函数 入口() {",
+      "    ${1:打印(\"你好，世界!\");}",
+      "}"
+    ],
+    "description": "程序模板（英文标点）"
+  }
+}
