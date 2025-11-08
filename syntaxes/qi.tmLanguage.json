@@ -114,7 +114,7 @@
         },
         {
           "name": "keyword.other.qi",
-          "match": "\\b(打印|真|假|空)\\b"
+          "match": "\\b(打印|真|假|空|取地址|解引用)\\b"
         },
         {
           "name": "storage.type.qi",

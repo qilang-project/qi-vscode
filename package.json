@@ -29,7 +29,15 @@
   "homepage": "https://qi-lang.org",
   "icon": "extension/icon.png",
   "activationEvents": [
-    "onLanguage:qi"
+    "onLanguage:qi",
+    "workspaceContains:**/*.qi",
+    "onCommand:qi.restartLanguageServer",
+    "onCommand:qi.showLanguageServerOutput",
+    "onCommand:qi.renameSymbol",
+    "onCommand:qi.findReferences",
+    "onCommand:qi.goToDefinition",
+    "onCommand:qi.showWorkspaceSymbols",
+    "onCommand:qi.build"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -159,6 +167,15 @@
             "type": "boolean",
             "default": true,
             "description": "启用签名帮助"
+          },
+          "qi.build.mode": {
+            "type": "string",
+            "default": "debug",
+            "enum": [
+              "debug",
+              "release"
+            ],
+            "description": "构建模式：debug 或 release"
           }
         }
       }
@@ -193,6 +210,11 @@
         "command": "qi.goToDefinition",
         "title": "转到定义",
         "category": "Qi"
+      },
+      {
+        "command": "qi.build",
+        "title": "构建当前文件",
+        "category": "Qi"
       }
     ],
     "menus": {
@@ -220,6 +242,10 @@
         {
           "command": "qi.goToDefinition",
           "when": "editorLangId == qi && editorTextFocus"
+        },
+        {
+          "command": "qi.build",
+          "when": "editorLangId == qi"
         }
       ],
       "editor/context": [
@@ -237,6 +263,11 @@
           "command": "qi.goToDefinition",
           "when": "editorLangId == qi && editorTextFocus",
           "group": "navigation"
+        },
+        {
+          "command": "qi.build",
+          "when": "editorLangId == qi",
+          "group": "z_commands"
         }
       ]
     },
@@ -270,6 +301,12 @@
         "key": "ctrl+shift+r",
         "when": "editorLangId == qi",
         "mac": "cmd+shift+r"
+      },
+      {
+        "command": "qi.build",
+        "key": "ctrl+shift+b",
+        "when": "editorLangId == qi",
+        "mac": "cmd+shift+b"
       }
     ]
   },

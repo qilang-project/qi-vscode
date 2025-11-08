@@ -386,5 +386,28 @@
       "}"
     ],
     "description": "程序模板（英文标点）"
+  },
+  "Qi Address-of": {
+    "prefix": "取地址",
+    "body": [
+      "取地址 ${1:variable}"
+    ],
+    "description": "取地址操作"
+  },
+  "Qi Dereference": {
+    "prefix": "解引用",
+    "body": [
+      "解引用 ${1:pointer}"
+    ],
+    "description": "解引用操作"
+  },
+  "Qi Pointer Example": {
+    "prefix": "指针示例",
+    "body": [
+      "变量 ${1:数值}: 整数 = ${2:42};",
+      "变量 ${3:指针变量} = 取地址 ${1:数值};",
+      "变量 ${4:结果} = 解引用 ${3:指针变量};"
+    ],
+    "description": "指针使用示例"
   }
 }
