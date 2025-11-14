@@ -106,19 +106,23 @@
       "patterns": [
         {
           "name": "keyword.control.qi",
-          "match": "\\b(如果|否则|当|对于|循环|匹配|跳出|继续|返回|等待)\\b"
+          "match": "\\b(如果|否则|当|对于|循环|匹配|跳出|继续|返回|等待|尝试|捕获|重试|情况)\\b"
         },
         {
           "name": "keyword.declaration.qi",
-          "match": "\\b(包|导入|公开|私有|可变|不可变)\\b"
+          "match": "\\b(包|导入|导出|公开|私有|模块|作为|在)\\b"
         },
         {
           "name": "keyword.other.qi",
-          "match": "\\b(打印|真|假|空|取地址|解引用)\\b"
+          "match": "\\b(打印|真|假|空|取地址|解引用|自己)\\b"
+        },
+        {
+          "name": "keyword.concurrency.qi",
+          "match": "\\b(并发|协程|通道|选择|启动|超时|未来|互斥锁|读写锁|条件变量|等待组|仅一次)\\b"
         },
         {
           "name": "storage.type.qi",
-          "match": "\\b(函数|异步函数|变量|结构体|枚举|方法|接口)\\b"
+          "match": "\\b(函数|变量|常量|结构体|枚举|方法|接口|类型)\\b"
         }
       ]
     },
@@ -126,11 +130,15 @@
       "patterns": [
         {
           "name": "storage.type.primitive.qi",
-          "match": "\\b(整数|长整数|短整数|字节|浮点数|布尔|字符|字符串)\\b"
+          "match": "\\b(整数|长整数|短整数|字节|浮点数|布尔|字符|字符串|空)\\b"
         },
         {
           "name": "storage.type.collection.qi",
-          "match": "\\b(数组|字典|列表|集合|指针|引用|可变引用)\\b"
+          "match": "\\b(数组|字典|列表|集合|指针|引用|可变引用|通道)\\b"
+        },
+        {
+          "name": "storage.type.async.qi",
+          "match": "\\b(未来|协程)\\b"
         },
         {
           "name": "support.type.qi",
