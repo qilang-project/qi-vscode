@@ -106,23 +106,23 @@
       "patterns": [
         {
           "name": "keyword.control.qi",
-          "match": "\\b(如果|否则|当|对于|循环|匹配|跳出|继续|返回|等待|尝试|捕获|重试|情况)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(如果|否则如果|否则|当|对于|循环|跳出|继续|返回|等待|尝试|捕获|重试|情况)(?![\\u4e00-\\u9fff\\w])"
         },
         {
           "name": "keyword.declaration.qi",
-          "match": "\\b(包|导入|导出|公开|私有|模块|作为|在)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(包|导入|导出|公开|私有|模块|作为|在)(?![\\u4e00-\\u9fff\\w])"
         },
         {
           "name": "keyword.other.qi",
-          "match": "\\b(打印|真|假|空|取地址|解引用|自己)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(打印行|打印|真|假|空|取地址|解引用|自己)(?![\\u4e00-\\u9fff\\w])"
         },
         {
           "name": "keyword.concurrency.qi",
-          "match": "\\b(并发|协程|通道|选择|启动|超时|未来|互斥锁|读写锁|条件变量|等待组|仅一次)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(并发|协程|通道|选择|启动|超时|未来|互斥锁|读写锁|条件变量|等待组|仅一次)(?![\\u4e00-\\u9fff\\w])"
         },
         {
           "name": "storage.type.qi",
-          "match": "\\b(函数|变量|常量|结构体|枚举|方法|接口|类型)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(异步函数|函数|变量|常量|枚举|方法|接口|类型)(?![\\u4e00-\\u9fff\\w])"
         }
       ]
     },
@@ -130,19 +130,19 @@
       "patterns": [
         {
           "name": "storage.type.primitive.qi",
-          "match": "\\b(整数|长整数|短整数|字节|浮点数|布尔|字符|字符串|空)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(整数|长整数|短整数|字节|浮点数|布尔|字符|字符串|空)(?![\\u4e00-\\u9fff\\w])"
         },
         {
           "name": "storage.type.collection.qi",
-          "match": "\\b(数组|字典|列表|集合|指针|引用|可变引用|通道)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(数组|字典|列表|集合|指针|引用|可变引用|通道)(?![\\u4e00-\\u9fff\\w])"
         },
         {
           "name": "storage.type.async.qi",
-          "match": "\\b(未来|协程)\\b"
+          "match": "(?<![\\u4e00-\\u9fff\\w])(未来|协程)(?![\\u4e00-\\u9fff\\w])"
         },
         {
           "name": "support.type.qi",
-          "match": "\\b[\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*\\b"
+          "match": "([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)"
         }
       ]
     },
@@ -150,11 +150,11 @@
       "patterns": [
         {
           "name": "entity.name.function.qi",
-          "match": "\\b([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\s*(?=\\()"
+          "match": "([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\s*(?=\\()"
         },
         {
           "name": "entity.name.function.async.qi",
-          "match": "\\b异步函数\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
+          "match": "异步函数\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
           "captures": {
             "1": {
               "name": "entity.name.function.qi"
@@ -163,7 +163,7 @@
         },
         {
           "name": "entity.name.function.declaration.qi",
-          "match": "\\b函数\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
+          "match": "函数\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
           "captures": {
             "1": {
               "name": "entity.name.function.qi"
@@ -188,11 +188,11 @@
       "patterns": [
         {
           "name": "variable.other.qi",
-          "match": "\\b([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\b"
+          "match": "([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)"
         },
         {
           "name": "variable.declaration.qi",
-          "match": "\\b变量\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
+          "match": "变量\\s+([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)",
           "captures": {
             "1": {
               "name": "variable.other.qi"
@@ -201,7 +201,7 @@
         },
         {
           "name": "variable.parameter.qi",
-          "match": "\\b([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\s*(?=:)",
+          "match": "([\\u4e00-\\u9fff][\\w\\u4e00-\\u9fff]*)\\s*(?=:)",
           "captures": {
             "1": {
               "name": "variable.parameter.qi"

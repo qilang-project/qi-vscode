@@ -3,6 +3,7 @@ import * as path from 'path';
 import { LanguageClient, LanguageClientOptions, ServerOptions } from 'vscode-languageclient/node';
 
 let client: LanguageClient;
+let outputChannel: vscode.OutputChannel;
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Qi 语言扩展正在激活...');
@@ -124,6 +125,11 @@ function registerLanguageServer(context: vscode.ExtensionContext): vscode.Dispos
         return new vscode.Disposable(() => {});
     }
 
+    // 确保输出 channel 已创建（只创建一次）
+    if (!outputChannel) {
+        outputChannel = vscode.window.createOutputChannel('Qi Language Server');
+    }
+
     // 查找语言服务器可执行文件
     let serverPath = config.get<string>('path');
     if (!serverPath) {
@@ -181,10 +187,10 @@ function registerLanguageServer(context: vscode.ExtensionContext): vscode.Dispos
         documentSelector: [{ scheme: 'file', language: 'qi' }],
         synchronize: {
             configurationSection: 'qi.languageServer',
-            fileEvents: vscode.workspace.createFileSystemWatcher('**/.qi')
+            fileEvents: vscode.workspace.createFileSystemWatcher('**/*.qi')
         },
         progressOnInitialization: true,
-        outputChannel: vscode.window.createOutputChannel('Qi Language Server'),
+        outputChannel: outputChannel,
         // 启用中间件
         middleware: {
             provideCompletionItem: (document: any, position: any, token: any, next: any) => {
@@ -192,12 +198,6 @@ function registerLanguageServer(context: vscode.ExtensionContext): vscode.Dispos
                     return [];
                 }
                 return next(document, position, token);
-            },
-            provideDiagnostics: (document: any, token: any, next: any) => {
-                if (!config.get('diagnostics.enabled')) {
-                    return [];
-                }
-                return next(document, token);
             },
             provideHover: (document: any, position: any, token: any, next: any) => {
                 if (!config.get('hover.enabled')) {
@@ -334,8 +334,11 @@ async function restartLanguageServer() {
 }
 
 function showLanguageServerOutput() {
-    const outputChannel = vscode.window.createOutputChannel('Qi Language Server');
-    outputChannel.show();
+    if (outputChannel) {
+        outputChannel.show();
+    } else {
+        vscode.window.showInformationMessage('Qi 语言服务器输出尚未初始化');
+    }
 }
 
 async function buildCurrentFile() {
