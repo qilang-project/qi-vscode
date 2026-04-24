@@ -2,7 +2,7 @@
   "name": "qi-language",
   "displayName": "Qi Language",
   "description": "Qi 编程语言支持 - 语法高亮、代码片段和语言服务器集成",
-  "version": "2026.4.24.1",
+  "version": "2026.424.1",
   "publisher": "qi-language",
   "engines": {
     "vscode": "^1.85.0"
