@@ -97,10 +97,12 @@
     "description": "返回语句"
   },
   "Qi Struct Declaration": {
-    "prefix": "结构体",
+    "prefix": [
+      "结构体"
+    ],
     "body": [
-      "结构体 ${1:Name} {",
-      "    ${2:field}: ${3:Type},",
+      "结构体 ${1:名称} {",
+      "\t${2:字段}: ${3:类型};",
       "}"
     ],
     "description": "结构体声明"
@@ -409,5 +411,187 @@
       "变量 ${4:结果} = 解引用 ${3:指针变量};"
     ],
     "description": "指针使用示例"
+  },
+  "Qi Try Catch": {
+    "prefix": [
+      "尝试",
+      "try"
+    ],
+    "body": [
+      "尝试 {",
+      "\t${1:}",
+      "} 捕获 ${2:错误} {",
+      "\t${3:}",
+      "} 最终 {",
+      "\t${4:}",
+      "}"
+    ],
+    "description": "尝试/捕获/最终 错误处理"
+  },
+  "Qi Throw": {
+    "prefix": [
+      "抛出",
+      "throw"
+    ],
+    "body": [
+      "抛出 ${1:错误信息};"
+    ],
+    "description": "抛出错误"
+  },
+  "Qi New Instance": {
+    "prefix": [
+      "新建"
+    ],
+    "body": [
+      "新建 ${1:类型} { ${2:字段}: ${3:值} }"
+    ],
+    "description": "新建结构体实例"
+  },
+  "Qi Match": {
+    "prefix": [
+      "匹配"
+    ],
+    "body": [
+      "匹配 ${1:值} {",
+      "\t情况 ${2:模式} => ${3:结果},",
+      "\t情况 _ => ${4:默认},",
+      "}"
+    ],
+    "description": "匹配表达式"
+  },
+  "Qi Channel": {
+    "prefix": [
+      "通道"
+    ],
+    "body": [
+      "变量 ${1:名称}: 通道<${2:类型}> = 通道::新建(${3:容量});"
+    ],
+    "description": "创建通道"
+  },
+  "Qi Spawn": {
+    "prefix": [
+      "启动"
+    ],
+    "body": [
+      "启动 ${1:函数名}(${2:参数});"
+    ],
+    "description": "启动协程"
+  },
+  "Qi Import HTTP": {
+    "prefix": [
+      "导入HTTP"
+    ],
+    "body": [
+      "导入 标准库.HTTP;"
+    ],
+    "description": "导入 HTTP 标准库"
+  },
+  "Qi Import JSON": {
+    "prefix": [
+      "导入JSON"
+    ],
+    "body": [
+      "导入 标准库.JSON;"
+    ],
+    "description": "导入 JSON 标准库"
+  },
+  "Qi Import Crypto": {
+    "prefix": [
+      "导入加密"
+    ],
+    "body": [
+      "导入 标准库.加密;"
+    ],
+    "description": "导入加密标准库"
+  },
+  "Qi Import DB": {
+    "prefix": [
+      "导入数据库"
+    ],
+    "body": [
+      "导入 标准库.数据库;"
+    ],
+    "description": "导入数据库标准库"
+  },
+  "Qi Import Regex": {
+    "prefix": [
+      "导入正则"
+    ],
+    "body": [
+      "导入 标准库.正则;"
+    ],
+    "description": "导入正则表达式标准库"
+  },
+  "Qi Import Random": {
+    "prefix": [
+      "导入随机"
+    ],
+    "body": [
+      "导入 标准库.随机;"
+    ],
+    "description": "导入随机数标准库"
+  },
+  "Qi Import CLI": {
+    "prefix": [
+      "导入命令行"
+    ],
+    "body": [
+      "导入 标准库.命令行;"
+    ],
+    "description": "导入命令行标准库"
+  },
+  "Qi Import LLM": {
+    "prefix": [
+      "导入大模型"
+    ],
+    "body": [
+      "导入 标准库.大模型;"
+    ],
+    "description": "导入大模型标准库"
+  },
+  "Qi Import OS": {
+    "prefix": [
+      "导入操作系统"
+    ],
+    "body": [
+      "导入 标准库.操作系统;"
+    ],
+    "description": "导入操作系统标准库"
+  },
+  "Qi Import Compress": {
+    "prefix": [
+      "导入压缩"
+    ],
+    "body": [
+      "导入 标准库.压缩;"
+    ],
+    "description": "导入压缩标准库"
+  },
+  "Qi Import Config": {
+    "prefix": [
+      "导入配置"
+    ],
+    "body": [
+      "导入 标准库.配置;"
+    ],
+    "description": "导入配置标准库"
+  },
+  "Qi Import GUI": {
+    "prefix": [
+      "导入图形化"
+    ],
+    "body": [
+      "导入 标准库.图形化;"
+    ],
+    "description": "导入图形界面标准库"
+  },
+  "Qi Import MCP": {
+    "prefix": [
+      "导入MCP"
+    ],
+    "body": [
+      "导入 标准库.MCP服务器;"
+    ],
+    "description": "导入 MCP 服务器标准库"
   }
 }
